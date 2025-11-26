@@ -74,32 +74,32 @@ class LogoutView(View):
 
         return redirect("register")    
   
-# class add_employee(View):
+class add_employee(View):
 
-#     def get(self, request):
+    def get(self, request):
 
-#         form = EmployeeForm()
+        form = EmployeeForm()
         
-#         return render(request, 'emp.html', {'form': form})
+        return render(request, 'emp.html', {'form': form})
 
-#     def post(self, request):
+    def post(self, request):
 
-#         form = EmployeeForm(request.POST)
+        form = EmployeeForm(request.POST)
 
-#         if form.is_valid():
+        if form.is_valid():
 
-#             emp = form.save(commit=False)
+            emp = form.save(commit=False)
 
           
-#             emp.net_salary = emp.base_salary + emp.bonus - emp.tax
+            emp.net_salary = emp.base_salary + emp.bonus - emp.tax
 
-#             emp.save()
+            emp.save()
 
          
-#             return render(request, 'emp.html', {'form': EmployeeForm(), 'success': True})
+            return render(request, 'emp.html', {'form': EmployeeForm(), 'success': True})
 
     
-#         return render(request, 'emp.html', {'form': form})
+        return render(request, 'emp.html', {'form': form})
     
 # class EmployeeEditView(View):
 
