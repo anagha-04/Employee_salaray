@@ -146,17 +146,17 @@ class EmployeeListView(View):
         return render(request, "employee_list.html", {"employees": employees})
 
 
-# class deleteView(View):
+class deleteView(View):
 
-#     def get(self, request, **kwargs):
+    def get(self, request, **kwargs):
 
-#         id = kwargs.get('pk')
+        id = kwargs.get('pk')
 
-#         emp = EmployeeModel.objects.get(id = id)
+        emp = EmployeeModel.objects.get(id = id)
 
-#         emp.delete()
+        emp.delete()
 
-#         return render(request,'employee_list.html')
+        return render(request,'employee_list.html')
 
     
     
