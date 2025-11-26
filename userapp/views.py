@@ -137,13 +137,13 @@ class EmployeeEditView(View):
 
         return render(request,"emp_edit.html")
     
-# class EmployeeListView(View):
+class EmployeeListView(View):
 
-#     def get(self, request):
+    def get(self, request):
 
-#         employees = EmployeeModel.objects.all()
+        employees = EmployeeModel.objects.all()
 
-#         return render(request, "employee_list.html", {"employees": employees})
+        return render(request, "employee_list.html", {"employees": employees})
 
 
 # class deleteView(View):
