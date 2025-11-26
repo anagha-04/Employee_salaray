@@ -66,13 +66,13 @@ class LoginView(View):
         return render(request,"login.html")
     
     
-# class LogoutView(View):
+class LogoutView(View):
 
-#     def get(self,request):
+    def get(self,request):
 
-#         logout(request)
+        logout(request)
 
-#         return redirect("register")    
+        return redirect("register")    
   
 # class add_employee(View):
 
