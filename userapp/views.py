@@ -101,41 +101,41 @@ class add_employee(View):
     
         return render(request, 'emp.html', {'form': form})
     
-# class EmployeeEditView(View):
+class EmployeeEditView(View):
 
-#     def get(self, request, **kwargs):
+    def get(self, request, **kwargs):
 
-#         id = kwargs.get('pk')
+        id = kwargs.get('pk')
 
-#         emp = EmployeeModel.objects.get(id=id)
+        emp = EmployeeModel.objects.get(id=id)
 
-#         form = EmployeeForm(initial={
-#             "name": emp.name,
-#             "base_salary": emp.base_salary,
-#             "bonus": emp.bonus,
-#             "tax": emp.tax
-#         })
-#         return render(request, "emp_edit.html", {"form": form})
+        form = EmployeeForm(initial={
+            "name": emp.name,
+            "base_salary": emp.base_salary,
+            "bonus": emp.bonus,
+            "tax": emp.tax
+        })
+        return render(request, "emp_edit.html", {"form": form})
 
-#     def post(self, request, **kwargs):
+    def post(self, request, **kwargs):
 
-#         id = kwargs.get('pk')
+        id = kwargs.get('pk')
 
-#         emp = EmployeeModel.objects.get(id=id)
+        emp = EmployeeModel.objects.get(id=id)
 
-#         emp.name = request.POST.get("name")
+        emp.name = request.POST.get("name")
 
-#         emp.base_salary = float(request.POST.get("base_salary"))
+        emp.base_salary = float(request.POST.get("base_salary"))
 
-#         emp.bonus = float(request.POST.get("bonus"))
+        emp.bonus = float(request.POST.get("bonus"))
 
-#         emp.tax = float(request.POST.get("tax"))
+        emp.tax = float(request.POST.get("tax"))
 
-#         emp.net_salary = emp.base_salary + emp.bonus - emp.tax
+        emp.net_salary = emp.base_salary + emp.bonus - emp.tax
 
-#         emp.save()
+        emp.save()
 
-#         return render(request,"emp_edit.html")
+        return render(request,"emp_edit.html")
     
 # class EmployeeListView(View):
 
